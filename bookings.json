@@ -1,0 +1,74 @@
+{
+  "bookings": [
+    {
+      "id": 1,
+      "room": "101",
+      "date": "2023-12-01",
+      "status": "confirmed",
+      "guest": "John Doe"
+    },
+    {
+      "id": 2,
+      "room": "102",
+      "date": "2023-12-07",
+      "status": "pending",
+      "guest": "Alice Johnson"
+    },
+    {
+      "id": 3,
+      "room": "103",
+      "date": "2023-12-14",
+      "status": "confirmed",
+      "guest": "Bob Smith"
+    },
+    {
+      "id": 4,
+      "room": "104",
+      "date": "2023-12-20",
+      "status": "cancelled",
+      "guest": "Carol White"
+    },
+    {
+      "room": "200",
+      "date": "2023-12-25",
+      "status": "confirmed",
+      "guest": "David Brown",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "room": "201",
+      "date": "2023-12-02",
+      "status": "pending",
+      "guest": "Eve Green"
+    },
+    {
+      "id": 7,
+      "room": "202",
+      "date": "2023-12-19",
+      "status": "confirmed",
+      "guest": "Frank Black"
+    },
+    {
+      "room": "300",
+      "date": "2023-12-26",
+      "status": "confirmed",
+      "guest": "John Smith",
+      "id": "dbcdbdb0-f7ee-4065-b21a-3738a97b2dad"
+    },
+    {
+      "room": "110",
+      "date": "Wednesday, Dec 27, 2023",
+      "status": "confirmed",
+      "guest": "John Smith",
+      "id": "a96be98d-0560-4005-8f43-c5b0783886d4"
+    },
+    {
+      "room": "200",
+      "date": "Monday, Dec 4, 2023",
+      "status": "confirmed",
+      "guest": "John Smith",
+      "id": "d72f2fd9-9df4-4c6a-aff0-fa458b35f337"
+    }
+  ]
+}

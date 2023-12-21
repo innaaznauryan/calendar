@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: "Gill Sans MT";
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.button {
+    background-color: #595286;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+    .container{
+        padding: 0 30px;
+    }
+}
