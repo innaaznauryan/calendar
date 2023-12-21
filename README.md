@@ -1,7 +1,16 @@
-# Vue 3 + Vite
+## Getting started
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+- Clone this repository to your local machine.  
+```git clone git@github.com:innaaznauryan/calendar.git```
+- Navigate to the root directory.
+- Install dependencies.  
+```npm install```
+- Start the development server   
+```npm run dev```
+- Start the JSON server to serve the data   
+```json-server --watch bookings.json```
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Authentication
+In the provided auth.json file, you'll find authentication information for users. Use the email and password to log in, and based on the JWT token and user role, the app will redirect you to the corresponding page.
+
