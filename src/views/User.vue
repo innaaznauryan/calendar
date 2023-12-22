@@ -1,8 +1,8 @@
 <template>
   <div class="user">
-    <h2>Welcome {{user.fullName}}!</h2>
+    <h2>Welcome {{ user.fullName }}!</h2>
     <p>Stay prepared!</p>
-    <p>Your next game is on {{nextGame}}</p>
+    <p>Your next game is on {{ nextGame }}</p>
     <img src="../assets/image/checkmate2.jpg" alt="">
   </div>
 </template>
@@ -20,19 +20,22 @@ const nextGame = new Date(user.nextGame).toLocaleString('en-US', {
 </script>
 
 <style lang="scss" scoped>
-.user{
+.user {
   text-align: center;
 }
-h2{
+
+h2 {
   text-align: center;
   padding: 20px;
 }
-p{
+
+p {
   text-align: center;
   font-size: 20px;
   padding: 20px;
 }
-img{
+
+img {
   width: 80%;
 }
 </style>

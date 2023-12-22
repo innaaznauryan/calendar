@@ -3,7 +3,7 @@ import axiosService from "../services/axiosService.js";
 import router from "../router/routes.js";
 
 const isLoggedIn = ref(!!localStorage.getItem("jwt"))
-const loginError = ref("")
+const loginError = ref(null)
 const login = async (email, password) => {
     try {
         const response = await axiosService.GET_USERS()
@@ -30,7 +30,7 @@ const login = async (email, password) => {
         } else {
             loginError.value = "Wrong email and/or password!"
             setTimeout(() => {
-                loginError.value = ""
+                loginError.value = null
             }, 3000)
             localStorage.removeItem("jwt")
             localStorage.removeItem("user")

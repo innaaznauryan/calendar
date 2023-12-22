@@ -1,6 +1,6 @@
 import {ref} from "vue";
 import axiosService from "../services/axiosService.js";
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 const bookings = ref(null)
 
@@ -12,9 +12,10 @@ const getBookings = async () => {
         console.log(error)
     }
 }
-const editBooking = async (booking) => {
+const editBooking = async (updatedBooking) => {
     try {
-        await axiosService.UPDATE_BOOKINGS(booking)
+        await axiosService.UPDATE_BOOKINGS(updatedBooking)
+        bookings.value = bookings.value.map(booking => booking.id === updatedBooking.id ? updatedBooking : booking)
     } catch (error) {
         console.log(error)
     }

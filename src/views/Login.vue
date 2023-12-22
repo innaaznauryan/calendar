@@ -3,11 +3,6 @@
   <form @submit.prevent="handleLogin">
     <input
         type="text"
-        v-model="fullName"
-        placeholder="Full Name"
-        required>
-    <input
-        type="text"
         v-model="email"
         placeholder="Email"
         required>
@@ -22,10 +17,9 @@
 </template>
 
 <script setup>
-import {ref, computed} from "vue";
+import {ref} from "vue";
 import {login, loginError} from "../composable/useUsers.js";
 
-const fullName = ref(null)
 const email = ref(null)
 const password = ref(null)
 

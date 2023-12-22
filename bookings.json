@@ -15,11 +15,11 @@
       "guest": "Alice Johnson"
     },
     {
-      "id": 3,
-      "room": "103",
-      "date": "2023-12-14",
+      "room": "104",
+      "date": "Thursday, Dec 14, 2023",
       "status": "confirmed",
-      "guest": "Bob Smith"
+      "guest": "Bob Smith",
+      "id": 3
     },
     {
       "id": 4,
@@ -59,7 +59,7 @@
     {
       "room": "110",
       "date": "Wednesday, Dec 27, 2023",
-      "status": "confirmed",
+      "status": "pending",
       "guest": "John Smith",
       "id": "a96be98d-0560-4005-8f43-c5b0783886d4"
     },
@@ -69,6 +69,20 @@
       "status": "confirmed",
       "guest": "John Smith",
       "id": "d72f2fd9-9df4-4c6a-aff0-fa458b35f337"
+    },
+    {
+      "room": "404",
+      "date": "Friday, Dec 29, 2023",
+      "status": "pending",
+      "guest": "David Brown",
+      "id": "b3588f21-dbdd-435b-8fac-8cee36f8cd92"
+    },
+    {
+      "room": "106",
+      "date": "Wednesday, Dec 6, 2023",
+      "status": "pending",
+      "guest": "David Brown",
+      "id": "490eff9b-ea82-4db1-bcbb-6017dc67e2f6"
     }
   ]
 }

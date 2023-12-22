@@ -5,9 +5,11 @@
 - Navigate to the root directory.
 - Install dependencies.  
 ```npm install```
-- Start the development server   
+- Install JSON server.  
+```npm install json-server```
+- Start the development server.   
 ```npm run dev```
-- Start the JSON server to serve the data   
+- Start the JSON server to serve the data.   
 ```json-server --watch bookings.json```
 
 

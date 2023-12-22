@@ -3,14 +3,30 @@
   <div class="modal">
     <form @submit="handlesave">
       <label for="room">Room</label>
-      <input v-model="room" id="room" type="text" required>
+      <input
+          v-model="room"
+          id="room"
+          type="text"
+          required>
       <label for="date">Date</label>
-      <input v-model="date" id="date" type="text" required>
+      <input
+          v-model="date"
+          id="date"
+          type="text"
+          disabled>
       <label for="status">Status</label>
-      <input v-model="status" id="status" type="text" required>
+      <select id="status" v-model="status">
+        <option value="confirmed">Confirmed</option>
+        <option value="pending">Pending</option>
+        <option value="canceled">Canceled</option>
+      </select>
       <label for="guest">Guest</label>
-      <input v-model="guest" id="guest" type="text" required>
-      <div class="btns">
+      <input
+          v-model="guest"
+          id="guest"
+          type="text"
+          required>
+      <div class="btn-container">
         <button type="submit" class="button">Save</button>
         <button class="button" @click="handlecancel">Cancel</button>
       </div>
@@ -78,13 +94,13 @@ label {
   cursor: pointer;
 }
 
-input {
+input, select {
   padding: 10px;
   border-radius: 7px;
   border: 1px solid #ddd;
 }
 
-.btns {
+.btn-container {
   display: flex;
   gap: 10px;
   justify-content: center;

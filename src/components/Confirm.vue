@@ -2,7 +2,7 @@
   <div class="veil"></div>
   <div class="modal">
     <p>Are you sure you want to log out?</p>
-    <div class="btns">
+    <div class="btn-container">
       <button class="button" @click="confirm">Yes</button>
       <button class="button" @click="close">No</button>
     </div>
@@ -24,7 +24,7 @@ const close = () => {
 </script>
 
 <style lang="scss" scoped>
-.veil{
+.veil {
   position: fixed;
   inset: 0;
   background-color: #000;
@@ -32,7 +32,8 @@ const close = () => {
   width: 100%;
   height: 100vh;
 }
-.modal{
+
+.modal {
   position: absolute;
   top: 100px;
   left: 50%;
@@ -40,12 +41,14 @@ const close = () => {
   transform: translateX(-50%);
   background-color: #fff;
   padding: 20px;
-  p{
+
+  p {
     font-size: 20px;
     padding: 10px;
     text-align: center;
   }
-  .btns{
+
+  .btn-container {
     display: flex;
     gap: 10px;
     justify-content: center;

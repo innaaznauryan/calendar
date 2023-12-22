@@ -3,10 +3,10 @@
   <div class="calendar-container">
     <VCalendar borderless @dayclick="handleDayClick" :attributes="attributes"/>
   </div>
-  <div class="btn">
+  <div class="btn-container">
     <button class="button" @click="bookSelectedDate">Book Date</button>
   </div>
-  <p v-if="selectError" class="error">Please select a date!</p>
+  <p v-if="dateError" class="error">Please select a date!</p>
   <BookDate
       v-if="showBook"
       :selectedBooking="selectedBooking"
@@ -16,22 +16,22 @@
   </BookDate>
 </template>
 <script setup>
-import {onMounted, ref, watch} from "vue";
+import {computed, onMounted, ref} from "vue";
 import {bookings, getBookings, editBooking, addBooking} from "../composable/useBookings.js";
 import BookDate from "../components/BookDate.vue";
 
 const selectedDate = ref(null)
 const selectedBooking = ref(null)
 const showBook = ref(false)
-const selectError = ref(false)
+const dateError = ref(false)
 
-const bookingDates = ref([])
-const attributes = ref([
+const attributes = computed(() => [
   {
     highlight: true,
-    dates: [...bookingDates.value]
+    dates: bookings.value?.map(booking => booking.date)
   },
 ]);
+
 const handleDayClick = (e) => {
   selectedDate.value = e.ariaLabel
   if (e.attributeCells.length) {
@@ -58,17 +58,16 @@ const bookSelectedDate = () => {
   if (selectedDate.value) {
     showBook.value = true
   } else {
-    selectError.value = true
+    dateError.value = true
     setTimeout(() => {
-      selectError.value = false
+      dateError.value = false
     }, 3000)
   }
 }
 
 const saveBooking = (updatedBooking) => {
-  if(selectedBooking.value) {
+  if (selectedBooking.value) {
     editBooking(updatedBooking)
-    bookings.value = bookings.value.map(booking => booking.id === updatedBooking.id ? updatedBooking : booking)
   } else {
     addBooking(updatedBooking)
   }
@@ -77,18 +76,9 @@ const saveBooking = (updatedBooking) => {
   selectedBooking.value = null
 }
 
-watch((bookings), () => {
-  updateBookings()
-})
-onMounted( () => {
-  updateBookings()
-})
-async function updateBookings () {
+onMounted(async () => {
   await getBookings()
-  const dates = bookings.value?.map(booking => new Date(booking.date))
-  bookingDates.value = dates
-  attributes.value[0].dates = [...dates]
-}
+})
 
 </script>
 
@@ -103,7 +93,7 @@ h2 {
   max-width: 250px;
 }
 
-.btn {
+.btn-container {
   text-align: center;
 }
 
@@ -111,7 +101,8 @@ h2 {
   color: gray;
   cursor: default;
 }
-.error{
+
+.error {
   color: red;
   text-align: center;
   padding: 10px;
